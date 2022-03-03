@@ -1,0 +1,2 @@
+After Deploying the Appgw need to add below VM.
+1. Add VMs in backend pool.

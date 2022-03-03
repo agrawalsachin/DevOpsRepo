@@ -1,0 +1,71 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "dl-sea-prd-vnet-003"
+        },
+        "location": {
+            "value": "southeastasia"
+        },
+        "sku": {
+            "value": "Standard"
+        },
+        "accessPolicies": {
+            "value": []
+        },
+        "tenant": {
+            "value": "6bb0c095-2207-4c3d-9a58-4143e5823f76"
+        },
+        "enabledForDeployment": {
+            "value": true
+        },
+        "enabledForTemplateDeployment": {
+            "value": true
+        },
+        "enabledForDiskEncryption": {
+            "value": true
+        },
+        "enableRbacAuthorization": {
+            "value": true
+        },
+        "publicNetworkAccess": {
+            "value": "Enabled"
+        },
+        "enableSoftDelete": {
+            "value": true
+        },
+        "softDeleteRetentionInDays": {
+            "value": 30
+        },
+        "enablePurgeProtection": {
+            "value": true
+        },
+		"ApplicationName": {
+            "value": "NCS-DataLake-GC"
+        },
+		"ApplicationOwner": {
+            "value": "Neelima Vykuntham"
+        },
+		"Environment": {
+            "value": "prd"
+        },
+        "networkAcls": {
+            "value": {
+                "defaultAction": "deny",
+                "bypass": "AzureServices",
+                "ipRules": [],
+                "virtualNetworkRules": [
+                    {
+                        "id": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/RG-Demo-Jan/providers/Microsoft.Network/virtualNetworks/Vnet-Demo-Jan22/subnets/websubnet",
+                        "ignoreMissingVnetServiceEndpoint": false
+                    },
+                    {
+                        "id": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/RG-Demo-Jan/providers/Microsoft.Network/virtualNetworks/Vnet-Demo-Jan22/subnets/appsubnet",
+                        "ignoreMissingVnetServiceEndpoint": false
+                    }
+                ]
+            }
+        }
+    }
+}

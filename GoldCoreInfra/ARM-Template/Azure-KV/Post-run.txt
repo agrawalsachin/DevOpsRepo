@@ -1,0 +1,3 @@
+After Deploying the Keyvault need to run powershell script for below.
+1. Create Private endpoint for keyvault.
+2. Add keys,secrets and certificates and access policies if any addition.

@@ -1,0 +1,108 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "dl-sea-uat-kv-002"
+        },
+        "location": {
+            "value": "southeastasia"
+        },
+        "sku": {
+            "value": "Standard"
+        },
+        "accessPolicies": {
+            "value": [
+                {
+                    "objectId": "3929a4d1-5822-42f3-907a-f65495c47216",
+                    "tenantId": "6bb0c095-2207-4c3d-9a58-4143e5823f76",
+                    "permissions": {
+                        "keys": [
+                            "Get",
+                            "List",
+                            "Update",
+                            "Create",
+                            "Import",
+                            "Delete",
+                            "Recover",
+                            "Backup",
+                            "Restore"
+                        ],
+                        "secrets": [
+                            "Get",
+                            "List",
+                            "Set",
+                            "Delete",
+                            "Recover",
+                            "Backup",
+                            "Restore"
+                        ],
+                        "certificates": [
+                            "Get",
+                            "List",
+                            "Update",
+                            "Create",
+                            "Import",
+                            "Delete",
+                            "Recover",
+                            "Backup",
+                            "Restore",
+                            "ManageContacts",
+                            "ManageIssuers",
+                            "GetIssuers",
+                            "ListIssuers",
+                            "SetIssuers",
+                            "DeleteIssuers"
+                        ]
+                    },
+                    "applicationId": ""
+                }
+            ]
+        },
+        "tenant": {
+            "value": "6bb0c095-2207-4c3d-9a58-4143e5823f76"
+        },
+        "enabledForDeployment": {
+            "value": false
+        },
+        "enabledForTemplateDeployment": {
+            "value": false
+        },
+        "enabledForDiskEncryption": {
+            "value": false
+        },
+        "enableRbacAuthorization": {
+            "value": false
+        },
+        "enableSoftDelete": {
+            "value": true
+        },
+        "softDeleteRetentionInDays": {
+            "value": 7
+        },
+        "Environment": {
+            "value": "UAT"
+        },
+        "networkAcls": {
+            "value": {
+                "defaultAction": "deny",
+                "bypass": "AzureServices",
+                "ipRules": [],
+                "virtualNetworkRules": [
+                    {
+                        "id": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/test-rg/providers/Microsoft.Network/virtualNetworks/vNETGoldCoreNonProd/subnets/Subnet-Data-Ingestion",
+                        "ignoreMissingVnetServiceEndpoint": false
+                    },
+                    {
+                        "id": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/test-rg/providers/Microsoft.Network/virtualNetworks/vNETGoldCoreNonProd/subnets/Subnet-Data-Reporting",
+                        "ignoreMissingVnetServiceEndpoint": false
+                    },
+                    {
+                        "id": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/test-rg/providers/Microsoft.Network/virtualNetworks/vNETGoldCoreNonProd/subnets/Subnet-App-Gw",
+                        "ignoreMissingVnetServiceEndpoint": false
+                    }
+                ]
+            }
+        }
+    }
+}

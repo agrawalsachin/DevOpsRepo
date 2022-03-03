@@ -1,0 +1,78 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "southeastasia"
+        },
+        "extendedLocation": {
+            "value": {}
+        },
+        "virtualNetworkName": {
+            "value": "vNETGoldCoreProd"
+        },
+        "resourceGroup": {
+            "value": "RG-ADF"
+        },
+        "addressSpaces": {
+            "value": "10.177.7.0/24"
+        },
+        "ipv6Enabled": {
+            "value": false
+        },
+        "subnetCount": {
+            "value": 3
+        },
+        "subnet0_name": {
+            "value": "Subnet-App-Gw"
+        },
+        "subnet0_addressRange": {
+            "value": "10.177.6.32/28"
+        },
+        "subnet0_serviceEndpoints": {
+            "value": [
+                "Microsoft.Storage",
+                "Microsoft.KeyVault",
+                "Microsoft.Sql"
+            ]
+        },
+        "subnet1_name": {
+            "value": "Subnet-Data-Ingestion"
+        },
+        "subnet1_addressRange": {
+            "value": "10.177.6.0/27"
+        },
+        "subnet1_serviceEndpoints": {
+            "value": [
+                "Microsoft.KeyVault",
+                "Microsoft.Storage",
+                "Microsoft.Sql"
+            ]
+        },
+        "subnet2_name": {
+            "value": "Subnet-Data-Reporting"
+        },
+        "subnet2_addressRange": {
+            "value": "10.177.6.48/28"
+        },
+        "subnet2_serviceEndpoints": {
+            "value": [
+                "Microsoft.Storage",
+                "Microsoft.KeyVault",
+                "Microsoft.Sql"
+            ]
+        },
+        "ddosProtectionPlanEnabled": {
+            "value": false
+        },
+        "firewallEnabled": {
+            "value": false
+        },
+        "bastionEnabled": {
+            "value": false
+        },
+        "Environment": {
+            "value": "Prod"
+        }
+    }
+}

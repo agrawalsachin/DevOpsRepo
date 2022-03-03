@@ -1,0 +1,2 @@
+Please update parameter in UAT and Prod Parameters file
+1. virtualNetworkName,resourceGroup,addressSpaces,subnet0_name,subnet0_addressRange (update same for other subnets as well)

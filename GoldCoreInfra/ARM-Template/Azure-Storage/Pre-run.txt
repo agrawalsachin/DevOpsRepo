@@ -1,0 +1,5 @@
+Before Running this template need to provision below resources and update paramter files for UAT and Prod accordingly.
+1. Update name for storage account,container and containerSoftDeleteRetentionDays,shareSoftDeleteRetentionDays.
+
+
+

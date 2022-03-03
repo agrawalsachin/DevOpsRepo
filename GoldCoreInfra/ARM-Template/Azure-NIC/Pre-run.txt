@@ -1,0 +1,5 @@
+Before Running this template need to update paramter files for UAT and Prod accordingly.
+1. Update name for nic and update subnet ID.
+
+
+

@@ -1,0 +1,7 @@
+Before Running this template need to provision below resources and update paramter files for UAT and Prod accordingly.
+1. Keyvault should be provision first and SSL certificate need to upload in keyvault certificates.
+2. Note down keyvault name, certificate name and update in parameter file.
+3. Update app gw name in paramter file,vnet Id and subnet name.
+
+
+

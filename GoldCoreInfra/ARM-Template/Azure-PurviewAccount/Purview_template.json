@@ -1,0 +1,45 @@
+{
+     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+     "contentVersion": "1.0.0.0",
+     "parameters": {
+         "name": {
+             "type": "String"
+         },
+         "location": {
+             "type": "String"
+         },
+         "managedRgName": {
+             "type": "string"
+         },
+         "Environment": {
+             "type": "string"
+         }
+     },
+     "variables": {},
+     "resources": [
+         {
+             "type": "Microsoft.Purview/accounts",
+             "apiVersion": "2021-07-01",
+             "name": "[parameters('name')]",
+             "location": "[parameters('location')]",
+             "dependsOn": [],
+             "tags": {
+                "Application Name": "NCS-DataLake-GC",
+                "Application Owner": "Neelima Vykuntham",
+                "Environment": "[parameters('Environment')]"
+            },
+             "sku": {
+                 "name": "Standard",
+                 "capacity": 1
+             },
+             "identity": {
+                 "type": "SystemAssigned"
+             },
+             "properties": {
+                 "publicNetworkAccess": "Disabled",
+                 "managedResourceGroupName": "[parameters('ManagedRgName')]"
+             }
+         }
+     ],
+     "outputs": {}
+ }

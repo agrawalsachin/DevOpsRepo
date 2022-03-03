@@ -1,0 +1,5 @@
+Before Running this template need to provision below resources and update paramter files for UAT and Prod accordingly.
+1. Update name for keyvault, object ID and permissions which need to allow to users or groups and update subnet ID in network acls.
+
+
+

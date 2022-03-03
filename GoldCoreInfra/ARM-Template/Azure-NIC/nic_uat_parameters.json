@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkInterfaceName": {
+            "value": "dl-sea-uat-vm1-nic1"
+        },
+        "location": {
+            "value": "southeastasia"
+        },
+        "subnetId": {
+            "value": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/test-rg/providers/Microsoft.Network/virtualNetworks/adfvnet/subnets/default"
+        },
+        "privateIPAllocationMethod": {
+            "value": "Dynamic"
+        },
+        "Environment": {
+            "value": "UAT"
+        }
+    }
+}

@@ -1,0 +1,3 @@
+After Deploying the Storage account need to run powershell script for below.
+1. Create Private endpoint for Storage account.
+2. Add whitelisting of vnet/subnet or any public IP in storage firewall.

@@ -1,0 +1,2 @@
+After Deploying the NIC need to run powershell script for below.
+1. Change IP address allocation to static.
