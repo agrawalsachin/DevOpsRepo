@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "dl-sea-uat-syn-003"
+            "value": "dl-sea-syn-work-001"
         },
         "location": {
-            "value": "eastus"
+            "value": "southeastasia"
         },
         "defaultDataLakeStorageAccountName": {
-            "value": "sachinstoragesyn001"
+            "value": "sachinstoragesyn001new"
         },
         "defaultDataLakeStorageFilesystemName": {
             "value": "uat"
@@ -18,7 +18,7 @@
             "value": "sqladminuser"
         },
         "sqlAdministratorLoginPassword": {
-            "value": "Demo@1234"
+            "value": null
         },
         "setWorkspaceIdentityRbacOnStorageAccount": {
             "value": true
@@ -27,10 +27,13 @@
             "value": true
         },
         "defaultAdlsGen2AccountResourceId": {
-            "value": "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourceGroups/template-rg/providers/Microsoft.Storage/storageAccounts/sachinstoragesyn001"
+            "value": "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourceGroups/Demo-Nov-RG/providers/Microsoft.Storage/storageAccounts/sachinstoragesyn001new"
+        },
+        "azureADOnlyAuthentication": {
+            "value": false
         },
         "allowAllConnections": {
-            "value": false
+            "value": true
         },
         "managedVirtualNetwork": {
             "value": "default"
@@ -43,22 +46,22 @@
             }
         },
         "publicNetworkAccess": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "storageSubscriptionID": {
             "value": "42b574e3-68d6-4cd8-8daa-674e553b0dc7"
         },
         "storageResourceGroupName": {
-            "value": "template-rg"
+            "value": "Demo-Nov-RG"
         },
         "storageLocation": {
             "value": "eastus"
         },
         "storageRoleUniqueId": {
-            "value": "0d91bccf-166d-4f04-88f0-b6aac84f5017"
+            "value": "8b5ffc90-b59a-4b9b-a3f1-5538cb2db015"
         },
         "isNewStorageAccount": {
-            "value": true
+            "value": false
         },
         "isNewFileSystemOnly": {
             "value": false
@@ -67,7 +70,7 @@
             "value": ""
         },
         "managedResourceGroupName": {
-            "value": "dl-sea-uat-syn-mrg-003"
+            "value": "dl-sea-syn-work-rg-001"
         },
         "storageAccessTier": {
             "value": "Hot"
@@ -91,7 +94,7 @@
             "value": "3929a4d1-5822-42f3-907a-f65495c47216"
         },
         "setSbdcRbacOnStorageAccount": {
-            "value": false
+            "value": true
         },
         "setWorkspaceMsiByPassOnStorageAccount": {
             "value": false
@@ -102,7 +105,7 @@
         "managedVirtualNetworkSettings": {
             "value": {
                 "allowedAadTenantIdsForLinking": [],
-                "preventDataExfiltration": true
+                "preventDataExfiltration": false
             }
         }
     }
