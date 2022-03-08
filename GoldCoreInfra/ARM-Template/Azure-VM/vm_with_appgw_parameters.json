@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "southeastasia"
+        },
+        "networkInterfaceName1": {
+            "value": "dl-sea-uat-vm1-nic"
+        },
+        "backendPoolId": {
+            "value": "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourceGroups/RG-Demo-Dec/providers/Microsoft.Network/applicationGateways/dl-sea-uat-appgw-01/backendAddressPools/webpool"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/test-rg/providers/Microsoft.Network/virtualNetworks/adfvnet"
+        },
+        "virtualMachineName": {
+            "value": "DLSEAUATTBLU001"
+        },
+        "virtualMachineName1": {
+            "value": "DLSEAUATTBLU001"
+        },
+        "virtualMachineComputerName": {
+            "value": "DLSEAUATTBLU001"
+        },
+        "virtualMachineRG": {
+            "value": "test-rg"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D4s_v5"
+        },
+        "adminUsername": {
+            "value": "localadmin"
+        },
+        "adminPassword": {
+            "value": "Demo@1234"
+        },
+        "patchMode": {
+            "value": "Manual"
+        },
+        "enableHotpatching": {
+            "value": false
+        },
+        "zone": {
+            "value": "1"
+        },
+        "tagsArray": {
+            "value": {
+                "Application Name": "NCS-Datalake-GC",
+                "Application Owner": "Neelima Vykuntham",
+                "Environment": "UAT"
+            }
+        }
+    }
+}
