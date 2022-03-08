@@ -213,7 +213,7 @@
                             "properties": {
                                 "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('storageBlobDataContributorRoleID'))]",
                                 "principalId": "[parameters('userObjectId')]",
-                                "principalType": "spn"
+                                "principalType": "ServicePrincipal"
                              }
                         }
                     ]
