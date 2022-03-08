@@ -18,7 +18,7 @@
             "value": "default"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/11ac6b48-64b2-4c6a-8c84-ea3e5579f1f1/resourceGroups/test-rg/providers/Microsoft.Network/virtualNetworks/adfvnet"
+            "value": "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourceGroups/Rg-Demo-Dec/providers/Microsoft.Network/virtualNetworks/vnet-adf"
         },
         "virtualMachineName": {
             "value": "DLSEAUATTBLU001"
@@ -30,7 +30,7 @@
             "value": "DLSEAUATTBLU001"
         },
         "virtualMachineRG": {
-            "value": "test-rg"
+            "value": "Demo-Nov-RG"
         },
         "osDiskType": {
             "value": "Premium_LRS"
