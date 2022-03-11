@@ -1,0 +1,22 @@
+{
+	"name": "adf-sachin123",
+	"properties": {
+		"encryption": {
+			"vaultBaseUrl": "https://kv-demo123345.vault.azure.net",
+			"keyName": "adfkey",
+			"keyVersion": ""
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "c5873296-b7db-49cc-8524-5e76bb37d706",
+		"tenantId": "6bb0c095-2207-4c3d-9a58-4143e5823f76",
+		"userAssignedIdentities": {
+			"/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourcegroups/automation-test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uid-adf": {
+				"clientId": "861d7311-9835-4fdb-8cfb-6f9b6396e305",
+				"principalId": "3d535620-a308-44f1-a459-9a3cd9c99206"
+			}
+		}
+	}
+}
