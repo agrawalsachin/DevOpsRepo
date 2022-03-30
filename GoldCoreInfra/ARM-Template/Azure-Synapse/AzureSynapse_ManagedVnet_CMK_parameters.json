@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "sqlAdministratorLogin": {
+      "value": "sqladmin"
+    },
+    "sqlAdministratorLoginPassword": {
+      "value": "Demo@1234"
+    },
+    "storageName": {
+      "value": "sachinsynapsenew006"
+    },
+    "fsName": {
+      "value": "uat"
+    },
+    "workspaceName": {
+      "value": "synapsenew006"
+    },
+    "encryption": {
+      "value": {
+        "cmk": {
+          "key": {
+            "name": "default",
+            "keyVaultUrl": "https://kv-demo123345.vault.azure.net/keys/adfkey"
+          },
+          "kekIdentity": {
+		    "useSystemAssignedIdentity": false,
+            "userAssignedIdentity": "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourcegroups/automation-test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uid-adf"
+          }
+        }
+      }
+    },
+    "userAssignedIdentityResourceId": {
+      "value": "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourcegroups/automation-test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uid-adf"
+    },
+    "useSystemAssignedIdentity": {
+      "value": false
+    }
+  }
+}

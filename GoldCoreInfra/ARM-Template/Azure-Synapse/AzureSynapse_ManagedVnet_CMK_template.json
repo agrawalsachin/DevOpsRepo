@@ -1,0 +1,124 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"location": {
+			"type": "string",
+			"defaultValue": "[resourceGroup().location]",
+			"metadata": {
+				"description": "Location for your deployment."
+			}
+		},
+		"sqlAdministratorLogin": {
+			"type": "string",
+			"metadata": {
+				"description": "The username of the SQL Administrator"
+			}
+		},
+		"sqlAdministratorLoginPassword": {
+			"type": "securestring",
+			"metadata": {
+				"description": "The password for the SQL Administrator"
+			}
+		},
+		"storageName": {
+			"type": "string",
+			"metadata": {
+				"description": "The Storage Account Name"
+			}
+		},
+		"fsName": {
+			"type": "string",
+			"metadata": {
+				"description": "The Container File system Name"
+			}
+		},
+		"workspaceName": {
+			"type": "string",
+			"metadata": {
+				"description": "The Synapse workspace Name"
+			}
+		},
+		"encryption": {
+            "type": "object"
+        },
+		"userAssignedIdentityResourceId": {
+            "type": "string"
+        },
+        "useSystemAssignedIdentity": {
+            "type": "bool"
+        }
+	},
+		"resources": [{
+				"type": "Microsoft.Storage/storageAccounts",
+				"apiVersion": "2019-06-01",
+				"name": "[parameters('storageName')]",
+				"location": "[parameters('location')]",
+				"sku": {
+					"name": "Standard_LRS"
+				},
+				"kind": "StorageV2",
+				"properties": {
+					"accessTier": "Hot",
+					"supportsHttpsTrafficOnly": true,
+					"isHnsEnabled": true
+				},
+				"resources": [{
+					"name": "[concat('default/', parameters('fsName'))]",
+					"type": "blobServices/containers",
+					"apiVersion": "2019-06-01",
+					"dependsOn": [
+						"[parameters('storageName')]"
+					],
+					"properties": {
+						"publicAccess": "None"
+					}
+				}]
+			},
+			{
+				"type": "Microsoft.Synapse/workspaces",
+				"apiVersion": "2019-06-01-preview",
+				"name": "[parameters('workspaceName')]",
+				"location": "[parameters('location')]",
+				"identity": {
+                "type": "UserAssigned,SystemAssigned",
+                "userAssignedIdentities": {
+                    "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourcegroups/automation-test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uid-adf": {}
+                }
+            },
+				"dependsOn": [
+					"[parameters('storageName')]",
+					"[parameters('fsName')]"
+				],
+				"properties": {
+					"defaultDataLakeStorage": {
+						"accountUrl": "[reference(parameters('storageName')).primaryEndpoints.dfs]",
+						"filesystem": "[parameters('fsName')]"
+					},
+					"managedVirtualNetworkSettings": {
+						"preventDataExfiltration": true,
+						"allowedAadTenantIdsForLinking": []
+
+                    },
+					"encryption": "[parameters('encryption')]",
+					"sqlAdministratorLogin": "[parameters('sqlAdministratorLogin')]",
+					"sqlAdministratorLoginPassword": "[parameters('sqlAdministratorLoginPassword')]",
+					"managedVirtualNetwork": "default"
+				},
+				"resources": [
+						{
+						"type": "managedIdentitySqlControlSettings",
+						"apiVersion": "2019-06-01-preview",
+						"name": "default",
+						"location": "[parameters('location')]",
+						"dependsOn": ["[parameters('workspaceName')]"],
+						"properties": {
+							"grantSqlControlToManagedIdentity": {
+								"desiredState": "Enabled"
+							}
+						}
+					}
+				]
+			}
+		]
+}
