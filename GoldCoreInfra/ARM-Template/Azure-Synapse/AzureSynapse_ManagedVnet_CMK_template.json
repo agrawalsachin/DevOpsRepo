@@ -42,9 +42,6 @@
 		"encryption": {
             "type": "object"
         },
-		"userAssignedIdentityResourceId": {
-            "type": "string"
-        },
         "useSystemAssignedIdentity": {
             "type": "bool"
         }
@@ -81,11 +78,8 @@
 				"name": "[parameters('workspaceName')]",
 				"location": "[parameters('location')]",
 				"identity": {
-                "type": "UserAssigned,SystemAssigned",
-                "userAssignedIdentities": {
-                    "/subscriptions/42b574e3-68d6-4cd8-8daa-674e553b0dc7/resourcegroups/automation-test/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uid-adf": {}
-                }
-            },
+                "type": "SystemAssigned",
+                },
 				"dependsOn": [
 					"[parameters('storageName')]",
 					"[parameters('fsName')]"
