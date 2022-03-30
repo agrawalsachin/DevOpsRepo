@@ -78,7 +78,7 @@
 				"name": "[parameters('workspaceName')]",
 				"location": "[parameters('location')]",
 				"identity": {
-                "type": "SystemAssigned",
+                "type": "SystemAssigned"
                 },
 				"dependsOn": [
 					"[parameters('storageName')]",
